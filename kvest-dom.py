@@ -1,3 +1,5 @@
+print("Компания KeyWee Production представляет..")
+print("Дом.")
 print("Ввод оформляется английскими буквами. ")
 print("Предыстория...")
 print("Вы гуляли по лесу и вдруг увидели одиноко стоящий дом.")
@@ -10,6 +12,9 @@ print("Вы решили подойти к двери.")
 print("Нажмите W чтобы открыть дверь")
 print("Нажмите E чтобы не открывать дверь.")
 a = input()
+while a != "E" and a != "W":
+    print("Нажмите на 'E' или 'W'.")
+    a = input()
 if a == "E":
     print("Вы пошли гулять дальше.")
     exit()
@@ -18,6 +23,9 @@ elif a == "W":
     print("Нажмите W чтобы подняться на 2 этаж")
     print("Нажмите E чтобы остаться на 1 этаже")
     b = input()
+    while b != "E" and b != "W":
+        print("Нажмите на 'E' или 'W'.")
+        b = input()
     if b == "E":
         print("Вам стало скучно и вы пошли гулять.")
         exit()
@@ -28,6 +36,9 @@ elif a == "W":
         print("Нажмите на 3 чтобы взять предмет 3")
         print("Нажмите на 4 чтобы не брать предметы")
         c = input()
+        while c != "1" and c != "2" and c != "3" and c != "4":
+            print("Нажмите на '1' , '2' , '3' или '4' .")
+            c = input()
         if c == "1":
             print("Вы подняли предмет 1.")
             inventar = 1
@@ -52,7 +63,13 @@ elif inventar == 1 or 2 or 3:
     print("Нажмите 'B' чтобы ударить.")
     udar = input()
     KolvoUdarov = 0
-    while KolvoUdarov != 5:
+    while udar != "B":
+        print("Нажмите на 'B'.")
+        udar = input()
+    while KolvoUdarov != 3:
+        while udar != "B":
+            print("Нажмите на 'B'.")
+            udar = input()
         print("Бей!")
         udar = input()
         if udar == "B":
@@ -63,15 +80,24 @@ print("'Точно, Окно!' Вы побежали к окну, но окна 
 print("'Что же делать?'")
 print("Нажмите W чтобы подняться наверх.")
 vverh = input()
+while vverh != "W":
+    print("Нажмите на 'W'.")
+    vverh = input()
 if vverh == "W":
     print("Вы поднялись навверх.")
     print("Нажмите на L если хотите зайти в комнату со столом.")
     print("Нажмите на N если хотите зайти в другую комнату.")
     vvod = input()
+    while vvod != "N" and vvod != "L":
+        print("Нажмите на 'N' или 'L'.")
+        vvod = input()
     if vvod == "N":
         print("'Дверь закрыта и кажется нужен ключ, зайду-ка я в комнату со столом.'")
         print("Нажмите на L если хотите зайти в комнату со столом.")
         vvod = input()
+        while vvod != "L":
+            print("Нажмите на 'L'.")
+            vvod = input()
         if vvod == "L":
             print("Вы зашли в комнату со столом. На нем осталось лежать 2 вещи.")
             print("Нажмите на E чтобы забрать оставшиеся вещи.")
@@ -83,19 +109,34 @@ if vverh == "W":
         print("Вы зашли в комнату со столом. На нем осталось лежать 2 вещи.")
         print("Нажмите на E чтобы забрать оставшиеся вещи.")
         vvod2 = input()
-        inventar2 = set()
+    while vvod2 != "E":
+        print("Нажмите на 'E'.")
+        vvod2 = input()
+inventar2 = set()
 if vvod2 == "E":
-    inventar2 == {1, 2, 3}
+    inventar2 == {"1", "2", "3"}
     print("Вы забрали все вещи со стола и вышли из комнаты.")
     print("'Какая-то интересная комната. Надо зайти.'")
     print("Нажмите на N чтобы войти в комнату")
 vvod3 = input()
+while vvod3 != "N":
+    print("Нажмите на 'N'.")
+    vvod3 = input()
 povorot = 0
+inventar2 = {"1", "2", "3"}
 if vvod3 == "N":
     print("'Эта дверь закрыта, попробую вставить ключ со стола.'")
-    if 3 in inventar2:
+    if "3" in inventar2:
         print("Вы вставляете ключ в отверстие..")
+        print("Нажмите на 'R' чтобы провернуть ключ.")
         while povorot != 3:
             print("Крути!")
+            damn = input()
+            while damn != "R":
+                print("Нажмите на 'R'.")
+                damn = input()
+            if damn == "R":
+                povorot += 1
 print("Дверь открылась, а там..")
+
 
